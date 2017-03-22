@@ -7,7 +7,7 @@ subtitle:           De l'autre côté du monde
 text:               Johann C
 illustration:       Johann C
 traduction:
-color:              blue
+color:              #378
 
 ######################
 # localisation       #

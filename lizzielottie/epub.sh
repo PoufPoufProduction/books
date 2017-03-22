@@ -30,7 +30,7 @@ color=`grep color $draft | sed -e "s/color://g" | sed -e "s/^ *//g"`
 
 lo_text=`grep lo_text $draft | sed -e "s/lo_text://g" | sed -e "s/^ *//g"`
 lo_illustration=`grep lo_illustration $draft | sed -e "s/lo_illustration://g" | sed -e "s/^ *//g"`
-lo_traduction=`grep lo_text $draft | sed -e "s/lo_traduction://g" | sed -e "s/^ *//g"`
+lo_traduction=`grep lo_traduction $draft | sed -e "s/lo_traduction://g" | sed -e "s/^ *//g"`
 
 lo_front=`grep lo_front $draft | sed -e "s/lo_front://g" | sed -e "s/^ *//g"`
 lo_credit=`grep lo_credit $draft | sed -e "s/lo_credit://g" | sed -e "s/^ *//g"`
@@ -49,6 +49,7 @@ mkdir $dest
 mkdir $dest/OEBPS
 cp -r data/META-INF $dest
 cp -r $1/res $dest/OEBPS
+cp data/licence/$2.svg $dest/OEBPS/res/img/licence.svg
 cp data/mimetype $dest
 
 #=== TOC.NCX ===
@@ -57,7 +58,39 @@ sed -e "s/%title%/${subtitle}/g" -e "s/%lo_front%/${lo_front}/g" -e "s/%lo_credi
 #PAGES
 sed -e "s/%color%/${color}/g" data/style.css > $dest/OEBPS/style.css
 sed -e "s/%title%/${title}/g" -e "s/%subtitle%/${subtitle}/g" data/page_front.xhtml > $dest/OEBPS/page_front.xhtml
-sed -e "s/%title%/${title}/g" data/page_credit.xhtml > $dest/OEBPS/page_credit.xhtml
+sed -e "s/%subtitle%/${subtitle}/g" -e "s/%lo_text%/${lo_text}/g" -e "s/%text%/${text}/g" -e "s/%lo_illustration%/${lo_illustration}/g" -e "s/%illustration%/${illustration}/g" -e "s/%lo_traduction%/${lo_traduction}/g" -e "s/%traduction%/${traduction}/g" data/page_credit.xhtml > $dest/OEBPS/page_credit.xhtml
+
+
+for f in `seq 1 50`; do
+if [ $f -lt 10 ]; then v=00$f; else if [ $f -lt 100 ]; then v=0$f; else v=$f; fi; fi
+g=`grep -n "#$v" $draft`
+if [ ! -z $g ]; then
+    l=`echo $g | sed -e "s/:.*$//g"`
+    ok=1
+    
+    echo "page ${v}..."
+    
+    sed -e "s/%subtitle%/${subtitle}/g" -e "s/%page%/${v}/g" data/page_default.xhtml > tmp1.xhtml
+            
+    for offset in `seq 1 5`; do
+        ll=$(( $l + $offset ))
+        content=`head --lines $ll $draft | tail --lines 1`
+        if [ -z "$content" ]; then ok=0; fi
+        if [ $ok -eq 1 ]; then
+
+            max=$f
+            sed -e "s/%line${offset}%/${content}/g" tmp1.xhtml > tmp2.xhtml
+        else
+            sed -e "s/%line${offset}%//g" tmp1.xhtml > tmp2.xhtml
+        fi
+        
+        rm -f tmp1.xhtml
+        mv tmp2.xhtml tmp1.xhtml
+    done
+    
+    mv tmp1.xhtml $dest/OEBPS/page${v}.xhtml
+fi
+done
 
 #=== CONTENT.OPF ===
 sed -e "s/%title%/${subtitle}/g" data/header.opf > $dest/OEBPS/content.opf
@@ -66,20 +99,36 @@ cd $dest/OEBPS
 
 #MANIFEST
 for f in res/img/*/*.svg ; do
-echo '    <item href="'$f'" media-type="image/svg+xml"/>' >> content.opf
+    fid=`basename $f .svg`
+    echo '    <item href="'$f'" id="'${fid}'" media-type="image/svg+xml"/>' >> content.opf
 done
+echo '    <item href="res/img/licence.svg" id="licence" media-type="image/svg+xml"/>' >> content.opf
+
 echo '    <item href="page_front.xhtml" id="page_front" media-type="application/xhtml+xml"/>' >> content.opf
 echo '    <item href="page_credit.xhtml" id="page_credit" media-type="application/xhtml+xml"/>' >> content.opf
+
+for f in `seq 1 $max`; do
+    if [ $f -lt 10 ]; then v=00$f; else if [ $f -lt 100 ]; then v=0$f; else v=$f; fi; fi
+    echo '    <item href="page'${v}'.xhtml" id="page'${v}'" media-type="application/xhtml+xml"/>' >> content.opf
+done
+
 echo '    <item href="style.css" id="style" media-type="text/css"/>' >> content.opf
 echo '    <item href="toc.ncx" id="ncx" media-type="application/x-dtbncx+xml"/>' >> content.opf
 
 cd ../..
+
+
+
 echo '  </manifest>' >> $dest/OEBPS/content.opf
 
 # SPINE
 echo '  <spine toc="ncx">' >> $dest/OEBPS/content.opf
 echo '    <itemref idref="page_front"/>' >> $dest/OEBPS/content.opf
 echo '    <itemref idref="page_credit"/>' >> $dest/OEBPS/content.opf
+for f in `seq 1 $max`; do
+    if [ $f -lt 10 ]; then v=00$f; else if [ $f -lt 100 ]; then v=0$f; else v=$f; fi; fi
+    echo '    <itemref idref="page'${v}'"/>' >> $dest/OEBPS/content.opf
+done
 echo '  </spine>' >> $dest/OEBPS/content.opf
   
 # GUIDE

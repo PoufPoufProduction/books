@@ -16,11 +16,7 @@
     </navPoint>
     <navPoint id="story" playOrder="3">
       <navLabel><text>%lo_story%</text></navLabel>
-      <content src="page_credit.xhtml"/>
-    </navPoint>
-    <navPoint id="end" playOrder="4">
-      <navLabel><text>%lo_end%</text></navLabel>
-      <content src="page_credit.xhtml"/>
+      <content src="page001.xhtml"/>
     </navPoint>
   </navMap>
 </ncx>
