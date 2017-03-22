@@ -1,0 +1,7 @@
+#body           { width:20em; height:20em; font-size:24px; position:relative; font-family: TeXGyreAdventorRegular, "Century Gothic", sans-serif; }
+.frontheader    { background-color:%color%; height:2em; }
+.frontfooter    { background-color:%color%; height:3em; }
+.img            { width:20em; height:15em; }
+
+#title          { position:absolute; font-size:1.2em; top:4%; left:0; width:100%; background-color:white; height:1.4em; text-align:center; }
+#subtitle       { position:absolute; font-size:1.2em; top:80%; left:0; width:100%; background-color:white; height:1.4em; text-align:center; }

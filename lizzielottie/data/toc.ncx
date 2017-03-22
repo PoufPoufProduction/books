@@ -7,8 +7,20 @@
   </docTitle>
   <navMap>
     <navPoint id="front" playOrder="1">
-      <navLabel><text>%front%</text></navLabel>
+      <navLabel><text>%lo_front%</text></navLabel>
       <content src="page_front.xhtml"/>
+    </navPoint>
+    <navPoint id="credit" playOrder="2">
+      <navLabel><text>%lo_credit%</text></navLabel>
+      <content src="page_credit.xhtml"/>
+    </navPoint>
+    <navPoint id="story" playOrder="3">
+      <navLabel><text>%lo_story%</text></navLabel>
+      <content src="page_credit.xhtml"/>
+    </navPoint>
+    <navPoint id="end" playOrder="4">
+      <navLabel><text>%lo_end%</text></navLabel>
+      <content src="page_credit.xhtml"/>
     </navPoint>
   </navMap>
 </ncx>
