@@ -1,7 +1,7 @@
-#body           { width:20em; height:20em; font-size:24px; position:relative; font-family: TeXGyreAdventorRegular, "Century Gothic", sans-serif; }
+#body           { font-size:3vw; position:relative; font-family: TeXGyreAdventorRegular, "Century Gothic", sans-serif; }
 .frontheader    { background-color:%color%; height:2em; }
 .frontfooter    { background-color:%color%; height:3em; }
-.img            { width:20em; height:15em; }
+.img            { width:100%; }
 #credits        { height:10em; }
 .credit         { height:2em; }
 .credit>*       { float:left; height:1.2em; padding:.1em 0 .1em .5em; border:2px solid gray; }
@@ -12,5 +12,5 @@
 #title          { position:absolute; font-size:1.2em; top:4%; left:0; width:100%; background-color:white; height:1.4em; text-align:center; }
 #subtitle       { position:absolute; font-size:1.2em; top:80%; left:0; width:100%; background-color:white; height:1.4em; text-align:center; }
 
-.legend         { font-size:0.5em; }
+.legend         { font-size:0.6em; }
 .legend p       { text-align:justify; }
