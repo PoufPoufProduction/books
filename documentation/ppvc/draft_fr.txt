@@ -1,0 +1,61 @@
+######################
+# book information   #
+######################
+
+title:              Manuel d'utilisation de PPVC
+subtitle:           Création facile d'illustrations normalisées
+text:               Johann C
+illustration:       Johann C
+traduction:
+color:              #378
+
+######################
+# localisation       #
+######################
+
+lo_text:            Texte
+lo_illustration:    Illustrations
+lo_traduction:      Traduction
+lo_legal:
+lo_front:           Couverture
+lo_credit:          Crédits
+lo_story:           Histoire
+lo_end:             Fin
+
+#001
+Ce manuel d'utilisation de la bibliothèque graphique "Pouf-Pouf Vector Comics" ou "PPVC" a pour objectifs de présenter les ressources, les outils ainsi que les procédés qui vont permettre à chacun de créer des illustrations facilement.
+Aucune compétence artistique n'est particulièrement requise. Une légère connaissance du logiciel de dessin vectoriel libre "inkscape", bien que non obligatoire, est tout de même conseillée.
+
+#002
+Pour créer une première illustration "PPVC", 3 ressources sont nécessaires :
+1. La librairie "PPVC" qui va fournir les premières briques utiles à la construction de l'image [1].
+2. Un catalogue d'illustrations "PPVC" sur lequel il va être possible de s'appuyer [2].
+3. Le manuel d'utilisation que vous êtes entrain de lire - ce dont je vous en félicite.
+
+#003
+Commençons par choisir une valeur de plan grâce au répertoire ppvc/templates qui propose une série de gabarits. Le plus petit de ces gabarits va permettre un cadrage extrêmement serré sur le sujet tandis que le plus grand sera d'avantage utilisé pour la réalisation d'une composition plus large. Le choix de ce gabarit dépend uniquement de la valeur de plan souhaité pour votre illustration.
+Copiez le gabarit de votre illustration et ouvrez cette copie avec le logiciel de dessin vectoriel libre Inkscape.
+
+#004
+Le répertoire ppvc/model propose différents modèles prêts à l'emploi. Une fois ouvert avec Inkscape également, un simple copier-coller permettra d'importer un personnage issu du fichier people001.svg vers votre propre illustration.
+Si ce personnage n'a pas la taille souhaitée au sein de l'image, il est nécessaire de changer le gabarit utilisé. Les contraintes inhérentes à la bibliothèque PPVC font que l'augmentation ou la réduction d'un personnage est strictement interdit.
+
+#005
+Ces mêmes contraintes font que seules 3 perspectives sont utilisables par la bibliothèque PPVC :
+1. Aplat : vue de face sans perspective.
+2. Ortho : vue de 3/4 haut, de type jeux-video, avec point de fuite à l'infini.
+3. 2.5D  : la perspective est émulée par une construction multi-plans.
+
+#006
+Rajoutons une ligne d'horizon à notre image. Il existe énormément de façons de faire, mais ici, nous nous contentrons de créer un simple rectangle placé derrière le personnage. Les zones hors-cadres disparaîtront au moment du rendu ou pourront être masquées si cela s'avèrerait nécessaire.
+En dessin vectoriel, il est vivement conseillé de séparer le fond et le contour. Chaque figure contourée est alors dupliquée (CTRL+D), l'instance en avant définit le contour, l'instance plus en arrière définit le fond. Cela permet de gérer correctement les aplats de couleurs en les glissant entre le fond et le countour.
+Pour des questions évidentes d'homogénéïté, la bibliothèque PPVC impose que tous les contours soient noirs et qu'ils aient une épaisseur de 0.5.
+
+#007
+Le répertoire ppvc/asset propose un ensemble de briques élémentaires qui peuvent venir enrichir nos illustrations. Depuis asset/nature.svg, sélectionnons un arbre et comme précédemment copions-le dans notre illustration en cours. La sélection peut se faire par simple clic quand l'objet est simple ou groupé, ou par encadrement quand l'objet est composé.
+L'objet est trop petit aussi, contrairement aux personnages, il peut être agrandi. Attention, l'épaisseur du trait doit obligatoirement resté à 0.5. Il est donc nécessaire de décocher au préalable la case "Redimensionner l'épaisseur du contour" dans la section "Comportement/Transformation" du menu "Edition/Préférences...".
+N'hésitez pas à adapter les couleurs des objets importés à votre propre composition.
+
+#008
+En parcourant les ressources proposées dans les répertoires asset/ et model/, il est facile d'enrichir notre composition. Il est également possible et même fortement conseillé de venir piocher des éléments originaux depuis des illustrations existantes. Suivant la construction de l'image source, il est parfois difficile d'isoler l'élément à récupérer. La suppression des éléments non désirés est parfois la meilleure solution.
+A ce propos, pensez à bien structurer votre propre illustration grâce aux groupes et aux calques afin d'en faciliter l'accès pour les personnes qui seraient intéressées d'en récupérer certains éléments par la suite.

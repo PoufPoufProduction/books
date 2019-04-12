@@ -1,0 +1,76 @@
+######################
+# book information   #
+######################
+
+title:              Les aventures de Lizzie et Lottie
+subtitle:           Lizzie et Lottie mènent l'enquête
+text:               Johann C
+illustration:       Johann C
+traduction:
+color:              #378
+
+######################
+# localisation       #
+######################
+
+lo_text:            Texte
+lo_illustration:    Illustrations
+lo_traduction:      Traduction
+lo_legal:
+lo_front:           Couverture
+lo_credit:          Crédits
+lo_story:           Histoire
+lo_end:             Fin
+
+#001
+Cela faisait maintenant quelques jours que Lizzie et Lottie avaient remarqué un comportement inhabituel de la part de leur ami Lapin. Il s'absentait régulièrement et semblait particulièrement secret.
+Les deux fillettes se posaient beaucoup de questions à ce sujet, aussi décidèrent-elles d'enquêter.
+
+#002
+Dans un premier temps, elle tentèrent de l'observer discrètement, mais chaque fois, Lapin les remarquait aussitot et il décampait si vite qu'elles ne pouvaient le suivre très longtemps.
+Leur enquête piétinait.
+
+#003
+"Pour être plus efficaces, il faudrait que Lapin ne puisse plus nous voir." - déclara Lottie.
+"J'ai exactement ce qu'il nous faut - annonça fièrement Lizzie qui sortait alors sa caisse de déguisements."
+
+#004
+Les deux fillettes cherchèrent longtemps les tenues les plus appropriées à leur opération d'espionnage. Finalement, au bout de nombreux essais, elles trouvèrent satisfaction.
+
+#005
+"C'est bien, mais il faudrait maintenant être sûr que personne ne nous reconnaisse." - s'inquiéta Lizzie.
+"J'ai une idée, voici venir le facteur : voyons ce qu'il se passe." - rebondit Lottie.
+"Bonjour monsieur le facteur, je suis un aimable scientifique de l'espace et voici ma... euh mon collègue, un docteur de pandas roux très réputé." - annonça Lizzie
+
+#006
+"Bonjour jeunes fi... euh, bonjour messieurs - reprit le facteur le plus sérieusement du monde. J'ai une revue pour les petites filles qui habitent ici. Je ne les vois pas. Pourriez-vous leur remettre ?"
+"Bien sûr, avec plaisir" - répondirent les fillettes, très satisfaites de leur déguisement respectif.
+
+#007
+"Ces déguisements sont très biens, mais j'ai peur qu'ils ne soient pas suffisants - objecta Lizzie - Ce qu'il nous faudrait, c'est du matériel d'agent secret."
+"J'ai une idée !" - répondit sa soeur qui découpa un vieux journal. "Ainsi, les gens vont croire que je lis le journal alors qu'en vrai, je les surveille !".
+
+#008
+"C'est trop stylé ! Mais le top, ce serait un téléphone pour pouvoir communiquer - remarqua Lizzie - Mais jamais nos parents ne nous prêteront leur portable."
+"Alors construisons notre propre téléphone ! C'est assez simple."
+
+#009
+A l'aide de 2 boites de yaourt et d'une corde, les deux fillettes construisirent un téléphone rudimentaire mais curieusement, sans raison précise, celui-ci refusait obstinément de fonctionner.
+Fort heureusement pour les deux fillettes, leur mère qui passait par là trouva la solution.
+
+#010
+"Le son est une vibration et pour qu'il se propage le long du fil, il faut que ce fil puisse vibrer. Et pour vibrer, un fil a tout simplement besoin d'être tendu, comme une corde de guitare ou de piano - expliqua leur maman. Tendez le fil et vous verrez que votre téléphone fonctionnera très bien."
+
+#011
+Effectivement, le téléphone fonctionnait beaucoup mieux. Lizzie et Lottie étaient enfin prêtes pour leur mission d'espionnage.
+Cachée derrière son journal, assise sur un banc public et déguisée en docteur de pandas roux très réputé, Lottie observait Lapin qui ne se doutait de rien.
+
+#012
+Lorsque celui-ci s'éloigna, elle téléphona à Lizzie qui continua de suivre Lapin méconnaissable en scientifique de l'espace. Après un long travail d'investigation, elles savaient désormais où se rendait leur ami Lapin : dans la cabane du jardin.
+
+#013
+Le mystère allait enfin être résolu et les fillettes n'en crurent pas leurs yeux lorsqu'elles virent la surprise que Lapin leur avait préparée.
+"Cela fait aujourd'hui 1 an que je vis ici et je voulais faire une petite fête surprise pour mes voisines préférées" - déclara Lapin.
+
+#014
+... et avec le fil du téléphone toujours tendu, tout le monde dans le village pu profiter de la fête.
