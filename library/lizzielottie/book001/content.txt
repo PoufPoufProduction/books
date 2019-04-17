@@ -1,0 +1,90 @@
+[cover]
+type: cover
+img: p000.svg
+
+[recto1]
+type: img/stars
+
+[title]
+type: title/default
+
+[credit]
+type: credit
+img: fr_artlibre.svg
+
+[p001]
+type: page
+img: p001.svg
+fr_text: Par un jour d'été, alors qu'elles jouaient dans le salon de leur maison, Lizzie et Lottie eurent une idée.[br]Une idée tout à fait géniale : aller de l'autre côté du monde.
+
+[p002]
+type: page
+img: p002.svg
+fr_text: Elles n'avaient pas le droit de sortir du jardin, leurs parents leur avaient strictement interdit. Mais si elles creusaient un trou suffisamment profond, elles finiraient bien par arriver quelque part, probablement dans un pays lointain, à l'autre bout de la terre.[br]Et tout cela, sans avoir eu à quitter le jardin de leur maison.
+
+[p003]
+type: page
+img: p003.svg
+fr_text: Les deux fillettes se mirent rapidement au travail.[br]Quelques minutes plus tard, Lapin, qui habitait un terrier au fond du jardin, vint les voir, curieux de l'agitation ambiante. "Que faite-vous ? - demanda-t'il - Pourquoi creusez-vous un trou dans le jardin ?". Les deux soeurs lui expliquèrent leur projet de traverse la terre afin d'en atteindre l'autre extrémité.
+
+[p004]
+type: page
+img: p004.svg
+fr_text: Lapin était perplexe.[br]"C'est impossible - dit-il - L'autre côté de la terre, c'est très très loin. Même en avion, cela ferait un très long voyage. Alors, en creusant, vous n'y pensez pas... A toutes les deux, il vous faudra plus de 1 000 ans pour arriver de l'autre côté !"
+
+[p005]
+type: page
+img: p005.svg
+fr_text: C'était embêtant : 1 000 ans, c'était quand même très long.[br]"Mais - se dirent les deux soeurs - si nous étions plus nombreux à creuser, cela pourrait aller beaucoup plus vite. C'est mathématique ! Il nous suffit de demander de l'aide. Si nous sommes mille ou même un million à creuser, on pourra arriver de l'autre côté avant le repas du soir !"
+
+[p006]
+type: page
+img: p006.svg
+fr_text: Ainsi, Lizzie et Lottie, par dessus le mur de leur maison, demandèrent aux gens de venir les aider à creuser leur trou.[br]Un policier, un facteur, des ouvriers des travaux publics, une électricienne, une dame à sa fenêtre, un ramoneur, une cycliste qui passait par là, tous furent séduits par l'idée d'aller de l'autre côté du monde.
+
+[p007]
+type: page
+img: p007.svg
+fr_text: Voyant tout ce monde dans le jardin, prêts à reprendre les travaux, Lapin s'inquiéta :[br]"Mais, à propos, pourquoi voulez-vous tant aller à l'autre bout du monde ?"
+
+[p008]
+type: page
+img: p008.svg
+fr_text: "Parce que de l'autre côté, on aura tous la tête en bas ! - répondit Lottie - Ca sera trop rigolo!"[br]"Ils vont en faire une drôle de tête en nous voyant les gens qui habitent là-bas !" - rajouta Lizzie en rigolant
+
+[p009]
+type: page
+img: p009.svg
+fr_text: "Ah mais non ! C'est pas comme ça que cela marche - répondit Lapin - Pour tout le monde, le bas, c'est en direction du centre de la terre. De l'autre côté, vous aurez les pieds par terre, comme tout le monde."[br]Les deux fillettes furent très déçues. Les autres gens aussi.
+
+[p010]
+type: page
+img: p010.svg
+fr_text: Elsa, l'électricienne demanda alors : "Mais qu'est-ce qu'il se passe quand on est au milieu de la terre ? Le bas, c'est où ?".[br]De l'avis de tous, c'était une bonne question.[br]"Eh bien, au centre de la terre, en théorie, il n'y a plus ni haut ni bas - répondit Lapin - On appelle cela l'apesanteur. C'est comme dans l'espace : vous flottez dans l'air."
+
+[p011]
+type: page
+img: p011.svg
+fr_text: "Mais c'est trop chic ! C'est trop cool !" - s'exclamèrent ensemble Lizzie et Lottie.[br]"Flotter dans l'espace au centre de la terre, c'est encore mieux que d'avoir la tête en bas." - rajouta Lizzie[br]"Et, en plus, c'est 2 fois moins loin." - compléta Lottie - "Allons-y ! Ca va être trop bien !"
+
+[p012]
+type: page
+img: p012.svg
+fr_text: Avant que Lapin n'ait pu aborder la notion de pression, une voix se fit entendre : "Vous n'irez nul part, jeunes filles !"[br]Les parents de Lizzie et de Lottie venaient d'arriver dans le jardin et ils n'étaient, mais alors, pas du tout contents de ce qu'ils voyaient.[br]"Qu'est-ce que c'est que ce chantier ?" - soupira leur père.
+
+[p013]
+type: page
+img: p013.svg
+fr_text: Les parents grondèrent tout le monde : le policier, le facteur, les ouvriers des travaux publics, l'électricienne, la dame à sa fenêtre, le ramoneur et la cycliste. Tous retournèrent à leurs activités laissant là Lizzie et Lottie qui, tristement, devaient reboucher au plus vite le trou qu'elles avaient creusé.
+
+[p014]
+type: page
+img: p014.svg
+fr_text: Lizzie et Lottie n'iront pas de l'autre côté du monde. Pas cette fois-ci, en tous cas.[br]Le soir venu, après que leurs parents les ont couchées, bordées et embrassées, Lizzie qui regardait par la fenêtre entrouverte demanda à sa soeur :[br]"Et la lune, tu crois que c'est loin comment ?"
+
+
+
+
+
+
+

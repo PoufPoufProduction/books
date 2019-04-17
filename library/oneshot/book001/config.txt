@@ -1,0 +1,4 @@
+color:              #378
+legal:				copyleft
+
+

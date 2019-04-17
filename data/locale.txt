@@ -1,0 +1,13 @@
+fr_title:           Titre
+fr_subtitle:        Sous-titre
+fr_text:            Texte original
+fr_update:			Modifications
+fr_illustration:    Illustrations
+fr_traduction:      Traduction
+fr_legal:			Licence
+fr_front:           Couverture
+fr_credit:          Crédits
+fr_story:           Histoire
+fr_end:             Fin
+fr_color:			Couleur
+		

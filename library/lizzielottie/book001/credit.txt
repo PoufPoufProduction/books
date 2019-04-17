@@ -1,0 +1,9 @@
+title:              Les aventures de Lizzie et Lottie
+subtitle:           De l'autre côté du monde
+text:               Johann C
+textupd:
+illustration:       Johann C
+traduction_fr:
+
+
+

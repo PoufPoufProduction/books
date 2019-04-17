@@ -1,0 +1,20 @@
+[cover]
+type: cover
+img : p000.svg
+
+[recto1]
+type: img/stars
+
+[title]
+type: title
+
+[credit]
+type: credit
+img: fr_artlibre.svg
+
+[p001]
+type: page
+img: p001.svg
+fr_text: Ça y est, le moment fatidique est arrivé, je vais enfin être fixé sur mon sort.[br]Après une semaine de procés, le jury a délibéré et va rendre son verdict.
+
+[end]

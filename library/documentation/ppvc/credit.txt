@@ -1,0 +1,8 @@
+title:              PoufPouf Vector Comics
+subtitle:           Manuel d'utilisation
+text:               Johann C
+illustration:       Johann C
+traduction_fr:
+
+
+
