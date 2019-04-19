@@ -3,7 +3,6 @@ type: title
 
 [credit]
 type: credit
-img: fr_artlibre.svg
 
 [p001]
 type: page

@@ -10,11 +10,65 @@ type: title
 
 [credit]
 type: credit
-img: fr_artlibre.svg
 
 [p001]
 type: page
 img: p001.svg
+fr_text: « Accusée, levez-vous ! »
+
+[p002]
+type: page
+img: p002.svg
 fr_text: Ça y est, le moment fatidique est arrivé, je vais enfin être fixé sur mon sort.[br]Après une semaine de procés, le jury a délibéré et va rendre son verdict.
+
+[p003]
+type: page
+img: p003.svg
+fr_text: Pour être honnête, je suis restée bouche-bée lorsque la gendarmerie a débarqué chez moi.[br]Vous ne me croirez peut-être pas, mais je ne pensais vraiment pas nuire à quiconque, bien au contraire.
+
+[p004]
+type: page
+img: p004.svg
+fr_text: Pendant qu’un gros moustachu me menottait sans ménagement, plusieurs autres représentants de l’ordre saisissaient le fruit de mon troc.
+
+[p005]
+type: page
+img: p005.svg
+fr_text: « Des pièces à conviction accablantes » qu’ils disaient avec fierté.
+
+[p006]
+type: page
+img: p006.svg
+fr_text: Je pensais qu’ils m’auraient libérée après m’avoir auditionnée. Mais ils ne prirent même pas la peine d’écouter ma version des faits. Pour eux, il y avait trop d’éléments à charge, la situation était extrêmement claire. Vu la gravité des crimes dont ils m’accusaient, ils ne voulaient pas prendre le risque de me laisser fuir. Ils ne me libérèrent pas sous caution et me maintinrent emprisonnée en attendant le procès.
+
+[p007]
+type: page
+img: p007.svg
+fr_text: Comme je n’avais rien à me reprocher, j’avais choisi d’assurer moi-même ma défense. L’avocat de la partie civile avança ses différents arguments. Il m’accusa de trafic d’organes, ni plus ni moins. Même s’il est vrai que je collectionne des membres, c’est toujours le même que je récupère.
+
+[p008]
+type: page
+img: p008.svg
+fr_text: Et puis, je paie bien en compensation. Fait aggravant selon lui, je ne m’attaque qu’à des enfants. Je rétorquai que je n’en ai jamais fait souffrir aucun. Même qu’ils sont ravis d’effectuer cet échange avec moi.
+
+[p009]
+type: page
+img: p009.svg
+fr_text: Cet avocat fit venir des témoins à la barre mais aucun ne put affirmer avec certitude m’avoir vue enfreindre la loi. Il faut dire que je suis discrète.
+
+[p010]
+type: page
+img: p010.svg
+fr_text: Je trouvais que je m’étais plutôt bien défendue malgré l’ignominie des crimes dont on m’accusait. Mais le jury semblait perplexe. Je ne savais pas du tout ce qu’il avait décidé. Je craignais de finir le reste de mes jours à l’ombre.
+
+[p011]
+type: page
+img: p011.svg
+fr_text: Le président prit la parole. « Aucune charge n’est retenue contre vous, vous êtes libre, Madame...
+
+[p012]
+type: page
+img: p012.svg
+fr_text: … la Petite Souris. »
 
 [end]

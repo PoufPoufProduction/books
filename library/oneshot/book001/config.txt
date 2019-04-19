@@ -1,4 +1,5 @@
 color:              #378
+font:				0.8
 legal:				copyleft
 
 

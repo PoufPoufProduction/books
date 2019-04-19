@@ -120,22 +120,32 @@ printf " %15s : " "$lo_illustration"; echo -e "${YELLOW}$illustration${NC}"
 co=$1/config.txt
 color="gray"
 legal="copyleft"
+format="square"
+font=1
 if [ -f $co ] ; then 
 	echo -e " + Read configuration from \e[4m$co\e[0m"
 	color=`grep color $co | sed -e "s/color://g" | sed -e "s/^[ \t]*//g"`
 	if [ -z $color ] ; then color="gray" ; fi
 	legal=`grep legal $co | sed -e "s/legal://g" | sed -e "s/^[ \t]*//g"`
 	if [ -z $legal ] ; then legal="copyleft" ; fi
+	format=`grep format $co | sed -e "s/format://g" | sed -e "s/^[ \t]*//g"`
+	if [ -z $format ] ; then format="square" ; fi
+	font=`grep font $co | sed -e "s/font://g" | sed -e "s/^[ \t]*//g"`
+	if [ -z $font ] ; then font=1 ; fi
 else
 	echo -e " + Can not find configuration file \e[4m$co\e[0m"
 fi
 
 printf " %15s : " $lo_color;        echo -e "${YELLOW}$color${NC}"
 printf " %15s : " $lo_legal;        echo -e "${YELLOW}$legal${NC}"
+printf " %15s : " "format";         echo -e "${YELLOW}$format${NC}"
+printf " %15s : " "font";           echo -e "${YELLOW}$font${NC}"
 
 
 # PREPARE OUTPUT
 dest=".book"
+pages="$dest"
+header="html"
 echo -e " + Prepare $output"
 if [ -d $dest ]; then rm -rf $dest ; fi
 mkdir $dest
@@ -143,14 +153,17 @@ mkdir $dest
 case "$output" in
 	epub*)
 		mkdir $dest/OEBPS
-		cp -r data/html/META-INF $dest/OEBPS
+		cp -r data/META-INF $dest/OEBPS
 		cp data/html/mimetype $dest
-		sed -e "s/%color%/${color}/g" data/html/style.css > $dest/OEBPS/style.css
+		sed -e "s/%color%/${color}/g" -e "s/%font%/${font}/g" data/html/style.css > $dest/OEBPS/style.css
+		pages="$dest/OEBPS"
+		header="xhtml"
 	;;
 	html*)
-		sed -e "s/%color%/${color}/g" data/html/style.css > $dest/style.css
+		sed -e "s/%color%/${color}/g" -e "s/%font%/${font}/g" data/html/style.css > $dest/style.css
 	;;	
 esac
+mkdir -p $pages/res/img
 
 
 # READ CONTENT
@@ -161,6 +174,8 @@ page=0
 type=""
 content=""
 img=""
+bg="white"
+cfont="black"
 for l in `cat $txt` ; do
 	case $l in
 	type*)	type=`echo $l | sed -e "s/type[ ]*:[ ]*//g"` ;;
@@ -168,18 +183,29 @@ for l in `cat $txt` ; do
 		if [[ -z $content || ! -z `echo $l | grep "$2_text"` ]] ; then
 			content=`echo $l | sed -e "s/.*text[ ]*:[ ]*//g"`
 		fi
+		
+		if [[ "$output" == "epub" || "$output" == "html" ]]; then
+			content=`echo $content | sed -e "s|\[br\]|\<br/\>|g"`
+		fi
+		
 	;;
 	*img*)
 		if [[ -z $img || ! -z `echo $l | grep "$2_img"` ]] ; then
 			img=`echo $l | sed -e "s/.*img[ ]*:[ ]*//g"`
 		fi
 	;;
+	*bg*) 		bg=`echo $l | sed -e "s/bg[ ]*:[ ]*//g"` ;;
+	*color*) 	cfont=`echo $l | sed -e "s/color[ ]*:[ ]*//g"` ;;
 	[*)
 		# EMPTY LINE FOR END OF PAGE
 		if [ ! -z $type ] ; then
 			printf "  . Page #%03d [%s] - type: " $page $section ; echo $type
+			next=`echo $l | sed -e "s/\[//g" -e "s/\]//g"`
 			if [ ! -z $content ] ; then echo -n "    - $content" | head -c 80; echo "..."; fi
-			if [ ! -z $img ] ; then echo "    - $img"; fi
+			if [ ! -z $img ] ; then
+				echo -e "    - copy $img to \e[4mres/img/\e[0m"
+				cp -f $1/res/img/pages/$img $pages/res/img/
+			fi
 			# GET SUBTYPE IF ANY
 			subtype=""
 			if [ `echo $type | grep "/" | wc -l` -eq 1 ] ; then
@@ -190,7 +216,11 @@ for l in `cat $txt` ; do
 			# BUILD CURRENT PAGE
 			case $type in
 				cover*)
+					sed -e "s/%subtitle%/${subtitle} - ${page}/g" -e "s/%lang%/$2/g" -e "s/%format%/${format}/g" -e "s/%subtype%/${subtype}/g" data/html/header.$header > $pages/page$page.$header
 					
+					sed -e "s/%title%/${title}/g" -e "s/%subtitle%/${subtitle}/g" -e "s/%img%/${img}/g" data/html/cover.html >> $pages/page$page.$header
+					
+					cat data/html/footer.html >> $pages/page$page.$header
 				
 				;;
 				img*)
@@ -198,14 +228,23 @@ for l in `cat $txt` ; do
 				
 				;;
 				
+				page*)
+					sed -e "s/%subtitle%/${subtitle} - ${page}/g" -e "s/%lang%/$2/g" -e "s/%format%/${format}/g" -e "s/%subtype%/${subtype}/g" data/html/header.$header > $pages/page$page.$header
+					
+					sed -e "s|%img%|res/img/${img}|g" -e "s|%content%|${content}|g" -e "s/%bg%/${bg}/g" -e "s/%color%/${cfont}/g" data/html/page.html >> $pages/page$page.$header
+					
+					cat data/html/footer.html >> $pages/page$page.$header
+				
 			esac
 			
 		fi
 	
-		section=`echo $l | sed -e "s/\[//g" -e "s/\]//g"`
+		section=$next
 		page=$(($page+1))
 		img=""
 		content=""
+		bg="white"
+		cfont="black"
 	;;
 	
 	esac
