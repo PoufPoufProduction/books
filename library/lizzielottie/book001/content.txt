@@ -6,7 +6,8 @@ img: p000.svg
 type: img/stars
 
 [title]
-type: title/default
+type: title
+color: white
 
 [credit]
 type: credit
@@ -24,7 +25,7 @@ fr_text: Elles n'avaient pas le droit de sortir du jardin, leurs parents leur av
 [p003]
 type: page
 img: p003.svg
-fr_text: Les deux fillettes se mirent rapidement au travail.[br]Quelques minutes plus tard, Lapin, qui habitait un terrier au fond du jardin, vint les voir, curieux de l'agitation ambiante. "Que faite-vous ? - demanda-t'il - Pourquoi creusez-vous un trou dans le jardin ?". Les deux soeurs lui expliquèrent leur projet de traverse la terre afin d'en atteindre l'autre extrémité.
+fr_text: Les deux fillettes se mirent rapidement au travail.[br]Quelques minutes plus tard, Lapin, qui habitait un terrier au fond du jardin, vint les voir, curieux de l'agitation ambiante. "Que faite-vous ? - demanda-t'il - Pourquoi creusez-vous un trou dans le jardin ?". Les deux soeurs lui expliquèrent leur projet de traverser la terre afin d'en atteindre l'autre extrémité.
 
 [p004]
 type: page
@@ -81,7 +82,15 @@ type: page
 img: p014.svg
 fr_text: Lizzie et Lottie n'iront pas de l'autre côté du monde. Pas cette fois-ci, en tous cas.[br]Le soir venu, après que leurs parents les ont couchées, bordées et embrassées, Lizzie qui regardait par la fenêtre entrouverte demanda à sa soeur :[br]"Et la lune, tu crois que c'est loin comment ?"
 
+[recto2]
+type: img/stars
 
+[last]
+type: last
+color:white
+fr_text: "Les aventures de Lizzie et Lottie" sont des histoires courtes pour enfants publiées sous licence art libre.[br][br]Le contenu de ce livre est intégralement accessible à tous. Les textes mais aussi, les illustrations peuvent être copiés, modifiés et distribués à loisir.
+
+[end]
 
 
 

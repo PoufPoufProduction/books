@@ -1,52 +1,122 @@
+[cover]
+type: cover
+img: all001.svg
+
+[recto1]
+type: img/stars
+
 [title]
 type: title
+color: white
 
 [credit]
 type: credit
 
+[chapter1]
+type:chapter
+color:white
+fr_text: Généralités
+
 [p001]
 type: page
 img: p001.svg
-fr_text: Ce manuel d'utilisation de la bibliothèque graphique "[i]Pouf-Pouf Vector Comics[/i]" ou "[i]PPVC[/i]" a pour objectifs de présenter les ressources, les outils ainsi que les procédés qui vont permettre à chacun de créer des illustrations facilement.[br]Aucune compétence artistique n'est particulièrement requise. Une légère connaissance du logiciel de dessin vectoriel libre "[b]inkscape[/b]", bien que non obligatoire, est tout de même conseillée.
+fr_text: La bibliothèque "[i]Pouf-Pouf Vector Comics[/i]" ou "[i]PPVC[/i]" est un ensemble de ressources graphiques destinées à la création d'[b]illustrations libres[/b], c'est-à-dire, des illustrations pouvant être créées, utilisées et modifiées à loisir par tout un chacun, sans nécessiter, pour autant, la moindre compétence artistique.[br][br]Ce manuel d'utilisation a pour ambition de présenter en détail le contenu de cette bibliothèque graphique, mais aussi d'expliciter les outils et les procédés qui vont permettre à chacun de créer ses propres illustrations. 
+
 
 [p002]
 type: page
 img: p002.svg
-fr_text: Pour créer une première illustration "PPVC", 3 ressources sont nécessaires :[br]1. La librairie "PPVC" qui va fournir les premières briques utiles à la construction de l'image [1].[br]2. Un catalogue d'illustrations "PPVC" sur lequel il va être possible de s'appuyer [2].[br]3. Le manuel d'utilisation que vous êtes entrain de lire - ce dont je vous en félicite.
+fr_text: Pour utiliser au mieux la bibliothèque graphique "[i]PPVC[/i]", [b]3 ressources[/b] sont importantes [i](les liens sont en annexe)[/i] :[br][br][b]1)[/b] La bibliothèque elle-même, qui va fournir les briques élémentaires utiles à la construction de l'image.[br][br][b]2)[/b] Un catalogue d'illustrations déjà réalisées sur lequel il va être possible de s'appuyer en y récupérant les éléments les plus pertinents.[br][br][b]3)[/b] Le manuel d'utilisation que vous êtes entrain de lire.[br][br]Ces 3 éléments réunis, il ne reste plus qu'à installer, si ce n'est pas déjà fait, le logiciel libre de dessin vectoriel [b]Inkscape[/b] pour pouvoir se lancer dans la réalisation d'une première illustration.
 
 [p003]
 type: page
 img: p003.svg
-fr_text: Commençons par choisir une valeur de plan grâce au répertoire ppvc/templates qui propose une série de gabarits. Le plus petit de ces gabarits va permettre un cadrage extrêmement serré sur le sujet tandis que le plus grand sera d'avantage utilisé pour la réalisation d'une composition plus large. Le choix de ce gabarit dépend uniquement de la valeur de plan souhaité pour votre illustration.[br]Copiez le gabarit de votre illustration et ouvrez cette copie avec le logiciel de dessin vectoriel libre Inkscape.
+fr_text: En premier lieu, il est important de bien choisir une [b]valeur de plan[/b] pour l'illustration à venir. Le répertoire [b]templates/[/b] de la bibliothèque propose toute une série de [b]gabarits[/b] : le plus petit va permettre un cadrage extrêmement serré sur le sujet, tandis que le plus grand sera d'avantage utilisé pour la réalisation de compositions plus larges. Le choix de ce gabarit dépend uniquement de l'intention de l'[i]artiste[/i] par rapport à l'illustration à venir.[br][br]Pour se servir d'un gabarit, il possible de le copier ou de l'ouvrir sous [b]Inkscape[/b] mais, dans le cadre d'une utilisation plus régulière, il est préférable de transférer le contenu du répertoire [b]templates/[/b] de la bibliothèque vers le répertoire de configuration d'[b]Inkscape[/b] afin de pouvoir accéder directement à ces gabarits depuis le menu [b]Fichier/Modèles...[/b]
 
 [p004]
 type: page
 img: p004.svg
-fr_text: Le répertoire ppvc/model propose différents modèles prêts à l'emploi. Une fois ouvert avec Inkscape également, un simple copier-coller permettra d'importer un personnage issu du fichier people001.svg vers votre propre illustration.[br]Si ce personnage n'a pas la taille souhaitée au sein de l'image, il est nécessaire de changer le gabarit utilisé. Les contraintes inhérentes à la bibliothèque PPVC font que l'augmentation ou la réduction d'un personnage est strictement interdit.
+fr_text: Ce gabarit, ouvert sous [b]Inkscape[/b], peut être enrichi en y ajoutant des éléments issus de la bibliothèque "[i]PPVC[/i]". La construction d'un personnage est un processus un peu complexe pour l'instant, aussi, il est plus simple d'aller piocher des éléments finalisés directement dans le répertoire [b]model/[/b]. Le fichier [b]people001.svg[/b] propose par exemple de nombreux personnages qu'il est possible d'importer par simple [b]copier-coller[/b] d'un document à l'autre. La sélection se fait en général par simple clic quand l'objet est simple ou groupé, ou par encadrement quand l'objet est composé.[br][br]Ce personnage peut alors être déplacé ou tourné mais, pour des raisons qui seront développées plus loin, il ne peut être [b]ni agrandi ni rétréci[/b]. Si sa taille au sein de l'image n'est pas satisfaisante, il n'y a pas d'autre solution que de [b]changer le gabarit[/b].
+
 
 [p005]
 type: page
 img: p005.svg
-fr_text: Ces mêmes contraintes font que seules 3 perspectives sont utilisables par la bibliothèque PPVC :[br]1. Aplat : vue de face sans perspective.[br]2. Ortho : vue de 3/4 haut, de type jeux-video, avec point de fuite à l'infini.[br]3. 2.5D  : la perspective est émulée par une construction multi-plans.
+fr_text: Les contraintes techniques permettant de créer des images libres depuis des ressources élémentaires ne sont pas sans restriction. Une gestion de la perspective basée sur des points de fuites est difficilement envisageable dans un environnement graphique 2D. Aussi, seules [b]3 types de perspectives[/b] sont utilisables depuis cette bibliothèque graphique. Les [b]personnages[/b] sont bien évidemment [b]compatibles[/b] avec chacune des propositions.[br][br][b]1) Aplat[/b] : vue de face sans perspective.[br][br][b]2) Orthométrique[/b] : vue de 3/4 haut, de type jeux-video, avec point de fuite à l'infini.[br][br][b]3) 2.5D[/b] : la perspective est émulée par une construction multi-plans.
 
 [p006]
 type: page
 img: p006.svg
-fr_text: Rajoutons une ligne d'horizon à notre image. Il existe énormément de façons de faire, mais ici, nous nous contentrons de créer un simple rectangle placé derrière le personnage. Les zones hors-cadres disparaîtront au moment du rendu ou pourront être masquées si cela s'avèrerait nécessaire.[br]En dessin vectoriel, il est vivement conseillé de séparer le fond et le contour. Chaque figure contourée est alors dupliquée (CTRL+D), l'instance en avant définit le contour, l'instance plus en arrière définit le fond. Cela permet de gérer correctement les aplats de couleurs en les glissant entre le fond et le countour.[br]Pour des questions évidentes d'homogénéïté, la bibliothèque PPVC impose que tous les contours soient noirs et qu'ils aient une épaisseur de 0.5.
+fr_text: Pour rajouter une ligne d'horizon à l'image, il existe énormément de façons de faire. L'une des plus simples est de créer simplement un rectangle placé derrière le personnage. Les zones hors-cadres disparaîtront au moment du rendu ou pourront être masquées si cela s'avèrait nécessaire.[br][br]L'un des principes fondamentaux de "[i]PPVC[/i]" est que, pour des raisons d'homogénéïté, chaque trait de contour doit avoir une [b]largeur égale à 0,5[/b]. C'est une contrainte importante car des contours d'épaisseurs différents rendraient l'image peu lisible et bancale. C'est également vis-à-vis de cette problématique d'homogénéïté que la [b]taille des personnages ne doit pas être modifiée[/b] sous peine de voir apparaître des degrès de précisions différents.
 
 [p007]
 type: page
 img: p007.svg
-fr_text: Le répertoire ppvc/asset propose un ensemble de briques élémentaires qui peuvent venir enrichir nos illustrations. Depuis asset/nature.svg, sélectionnons un arbre et comme précédemment copions-le dans notre illustration en cours. La sélection peut se faire par simple clic quand l'objet est simple ou groupé, ou par encadrement quand l'objet est composé.[br]L'objet est trop petit aussi, contrairement aux personnages, il peut être agrandi. Attention, l'épaisseur du trait doit obligatoirement resté à 0.5. Il est donc nécessaire de décocher au préalable la case "Redimensionner l'épaisseur du contour" dans la section "Comportement/Transformation" du menu "Edition/Préférences...".[br]N'hésitez pas à adapter les couleurs des objets importés à votre propre composition.
+fr_text: Le répertoire de la bibliothèque [b]asset/[/b] propose un ensemble de briques élémentaires qui peuvent venir enrichir toute illustration en construction. Depuis le fichier [b]asset/nature.svg[/b], des arbres sont disponibles et peuvent être intégrés simplement par copier-coller vers le document de travail.[br][br]L'objet est trop petit aussi, contrairement aux personnages, il peut être agrandi. Là encore, l'épaisseur du trait doit obligatoirement rester à une [b]valeur de 0.5[/b]. A cette fin, il est utile de décocher la case "[b]Redimensionner l'épaisseur du contour[/b]" dans la section "[b]Comportement/Transformation[/b]" du menu "[b]Edition/Préférences...[/b]".[br][br]Les couleurs proposées ne demandent évidemment qu'à être modifiées selon les besoins de la composition en cours.
 
 [p008]
 type: page
 img: p008.svg
-fr_text: En parcourant les ressources proposées dans les répertoires asset/ et model/, il est facile d'enrichir notre composition. Il est également possible et même fortement conseillé de venir piocher des éléments originaux depuis des illustrations existantes. Suivant la construction de l'image source, il est parfois difficile d'isoler l'élément à récupérer. La suppression des éléments non désirés est parfois la meilleure solution.[br]A ce propos, pensez à bien structurer votre propre illustration grâce aux groupes et aux calques afin d'en faciliter l'accès aux personnes qui seraient intéressées d'en récupérer certains éléments par la suite.
+fr_text: En parcourant les ressources proposées dans les répertoires [b]asset/[/b] et [b]model/[/b] de la bibliothèque, il devient aisé d'enrichir une illustration en cours de conception. Il est également possible et même fortement conseillé d'aller "piocher" des éléments originaux depuis des [b]illustrations existantes[/b].[br][br]Suivant la construction de l'image source, il est parfois difficile d'isoler l'élément à récupérer. La [b]suppression[/b] des éléments alentours non désirés est parfois la meilleure solution ou, du moins, la plus simple.[br][br]A ce propos, il est important de bien structurer ses propres illustrations grâce aux [b]groupes[/b] et aux [b]calques[/b], afin d'en faciliter l'accès aux personnes qui seraient intéressées d'en récupérer certains éléments par la suite.
 
 [p009]
 type: page
 img: p009.svg
-fr_text: Voici donc une illustration simple créée à partir de la bibliothèque PPVC. Cette réalisation n'a demandé aucune compétence artistique si ce n'est un certain sens de la composition. L'image obtenue est certes, basique et sans grande qualité graphique, mais elle remplit correctement son rôle illustratif. Surtout, elle a l'avantage considérable de s'inscrire dans un contexte de culture libre qui lui permet d'être accessible, utilisable et modifiable par tous.[br]Quelques traitements graphiques assez simples et qui seront détaillés par la suite, permettent d'ailleurs de relever légèrement le niveau esthétique.
+fr_text: Ce chapitre se termine sur cette première illustration, créée directement à partir de la bibliothèque "[i]PPVC[/i]". Cette réalisation n'a requis aucune compétence artistique si ce n'est un certain sens de la composition. L'image obtenue est, certes, basique et sans grande qualité graphique, mais elle remplit correctement son [b]rôle illustratif[/b]. Surtout, elle a l'avantage considérable de s'inscrire dans un contexte de [b]culture libre[/b] qui lui permet d'être accessible, utilisable et modifiable par tous. A ce titre, chaque nouvelle illustration issue de la bibliothèque "PPVC" vient [b]enrichir[/b] cette même bibliothèque. Ainsi va la force du libre ! [br][br]Ici, quelques traitements graphiques ont permis de relever légèrement le niveau esthétique de l'illustration. Ils seront le sujet du [b]prochain chapitre[/b].
+
+[chapter2]
+type:chapter
+color:white
+fr_text: Trucs, astuces et conseils
+
+
+[p010]
+type: page
+img: p010.svg
+fr_text: [b]TRICHEZ ![/b] Les contraintes d'utilisation de la bibliothèque sont très strictes mais il ne faut pas hésiter pour autant à en enfreindre certaines lorsque cela fait sens.[br][br][b]1)[/b] La [b]suppression du contour[/b] donne un effet particulier qui peut être utilisé astucieusement, comme ici dans la bulle.[br][br][b]2)[/b] L'utilisation de [b]ressources non issues de la bibliothèque[/b] comme ce globe terrestre beaucoup trop détaillé, crée une hétérogénéité de style qui peut s'avérer intéressante.[br][br][b]3)[/b] La juxtaposition de [b]valeurs de plan différentes[/b] permet de créer un effet de profondeur supplémentaire comme la pioche en avant-plan ou la vignette sur les illustrations à droite.
+
+
+[p011]
+type: page
+img: p011.svg
+fr_text: En dessin vectoriel, il est vivement conseillé de séparer le fond et le contour. Chaque forme est dupliquée ([i]CTRL+D[/i]), l'instance [b]en avant[/b] définit le [b]contour[/b], l'instance plus [b]en arrière[/b] définit le [b]fond[/b]. Cette distinction permet de gérer correctement les aplats de couleurs ou les ombres en les glissant entre le fond et le contour.[br][br]Pour rajouter une forme dans une autre, la méthode est toujours la même :[br][b]1)[/b] [b]Créer[/b] la forme à rajouter sans se soucier des zones qui pourraient dépasser. Ici un rectangle plus sombre.[br][b]2)[/b] [b]Dupliquer[/b] le contour ou le fond principal.[br][b]3)[/b] En sélectionnant la forme à rajouter et le contour dupliqué, faire une intersection depuis [b]Chemin/Intersection[/b].[br][b]4)[/b] [b]Glisser[/b] cette nouvelle forme derrière le contour.
+
+[p012]
+type:page
+img: p012.svg
+fr_text: [b]INVENTEZ[/b]. Sans forcément contrevenir aux règles propres à "[i]PPVC[/i]", il est possible d'effectuer énormément d'actions "alternatives".[br][br][b]1)[/b] Des formes peuvent être [b]détournées[/b] de leur fonction première et des cornes peuvent devenir des moustaches tout à fait convenables.[br][br][b]2)[/b] La [b]transparence[/b] peut donner des résultats intéressants comme pour le rendu d'un voile atmosphérique par exemple.[br][br]A titre personnel, j'utilise assez peu les [b]gradients de couleurs[/b] que je juge souvent trop [i]durs[/i] mais rien n'empêche d'en faire un meilleur usage que le mien.
+
+[chapter3]
+type:chapter
+color:white
+fr_text: Création de personnages
+
+[p013]
+type:page
+img: p013.svg
+fr_text: Le fichier [b]asset/people.svg[/b] permet la création de personnages normalisés. Grâce aux patrons centraux, il va être possible de dimensionner et de positionner les éléments constitutifs des personnages : tête, cheveux, bouche, nez, vêtements, etc. Ces éléments sont disponibles dans les cadres extérieurs et peuvent s'adapter en taille et en couleur selon les besoins de l'utilisateur.[br][br]La forme générale de la tête est composée ainsi :[br][br][b]1)[/b] Une masse de cheveux à l'arrière[br][br][b]2)[/b] Un visage masqué partiellement grâce l'intersection d'un contour depuis le menu [b]Chemin/Intersection[/b].
+
+[p014]
+type:page
+img: p014.svg
+fr_text: Il est conseillé de ne placer les bras d'un personnage qu'après avoir positionner ses mains. Une fois la bonne couleur attribuée, il ne reste plus qu'à glisser ces bras vers l'arrière du personnage pour obtenir un premier résultat. Il est toutefois possible d'aller plus loin.[br][br]En utilisant le menu [b]Chemin/Union[/b], il est possible de fusionner le bras avec le reste du corps et ainsi de faire disparaître le contour séparant les deux formes. Attention cependant au fait que le corps est souvent composé d'un contour et d'un fond distincts et que cette union doit être faite pour chacune de ces formes.
+
+[annexe]
+type:chapter
+color:white
+fr_text: Annexes
+
+[link]
+type:page/noimg
+fr_text: [b]Liens[/b][br][br][b]PPVC[/b] : https://github.com/PoufPoufProduction/ppvc[br]
+
+[recto2]
+type: img/stars
+
+[last]
+type: last
+color:white
+fr_text: "[i]Pouf-Pouf Vector Comics[/i]" est une bibliothèque graphique permettant la création d'illustrations pleinement libres. Normalisées, les productions issues de cette bibliothèque peuvent être utilisées et modifiées à loisir par chacun, sans réquérir la moindre compétence artistique.
+
 
 [end]

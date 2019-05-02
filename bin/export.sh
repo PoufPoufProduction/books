@@ -158,12 +158,16 @@ case "$output" in
 		sed -e "s/%color%/${color}/g" -e "s/%font%/${font}/g" data/html/style.css > $dest/OEBPS/style.css
 		pages="$dest/OEBPS"
 		header="xhtml"
+		mkdir -p $pages/res/img
+		cp data/licence/$2_$legal.svg $pages/res/img/licence.svg
 	;;
 	html*)
 		sed -e "s/%color%/${color}/g" -e "s/%font%/${font}/g" data/html/style.css > $dest/style.css
+		mkdir -p $pages/res/img
+		cp data/licence/$2_$legal.svg $pages/res/img/licence.svg
 	;;	
 esac
-mkdir -p $pages/res/img
+
 
 
 # READ CONTENT
@@ -173,6 +177,7 @@ section=""
 page=0
 type=""
 content=""
+comment=""
 img=""
 bg="white"
 cfont="black"
@@ -185,9 +190,17 @@ for l in `cat $txt` ; do
 		fi
 		
 		if [[ "$output" == "epub" || "$output" == "html" ]]; then
-			content=`echo $content | sed -e "s|\[br\]|\<br/\>|g"`
+			content=`echo $content | sed -e "s|\[br\]|\<br/\>|g" -e "s|\[i\]|\<i\>|g" -e "s|\[/i\]|\</i\>|g" -e "s|\[b\]|\<b\>|g" -e "s|\[/b\]|\</b\>|g"`
+		fi
+	;;
+	*comment*)
+		if [[ -z $comment || ! -z `echo $l | grep "$2_comment"` ]] ; then
+			comment=`echo $l | sed -e "s/.*comment[ ]*:[ ]*//g"`
 		fi
 		
+		if [[ "$output" == "epub" || "$output" == "html" ]]; then
+			comment=`echo $comment | sed -e "s|\[br\]|\<br/\>|g"` 
+		fi
 	;;
 	*img*)
 		if [[ -z $img || ! -z `echo $l | grep "$2_img"` ]] ; then
@@ -212,30 +225,61 @@ for l in `cat $txt` ; do
 				subtype=`echo $type | sed -e "s|[^/]*/||g"`
 				type=`echo $type | sed -e "s|/.*||g"`
 			fi
+			if [ -z $subtype ] ; then subtype="default"; fi
+			
+			# HEADER
+			
+			sed -e "s/%subtitle%/${subtitle} - ${page}/g" -e "s/%lang%/$2/g" -e "s/%format%/${format}/g" -e "s/%subtype%/${subtype}/g" data/html/header.$header > $pages/page$page.$header
 			
 			# BUILD CURRENT PAGE
 			case $type in
 				cover*)
-					sed -e "s/%subtitle%/${subtitle} - ${page}/g" -e "s/%lang%/$2/g" -e "s/%format%/${format}/g" -e "s/%subtype%/${subtype}/g" data/html/header.$header > $pages/page$page.$header
 					
-					sed -e "s/%title%/${title}/g" -e "s/%subtitle%/${subtitle}/g" -e "s/%img%/${img}/g" data/html/cover.html >> $pages/page$page.$header
+					sed -e "s/%title%/${title}/g" -e "s/%subtitle%/${subtitle}/g" -e "s/%img%/${img}/g" data/html/cover_$subtype.html >> $pages/page$page.$header
 					
 					cat data/html/footer.html >> $pages/page$page.$header
 				
 				;;
 				img*)
-					echo "   + img"
+					echo -e "    - copy data/img/$subtype.svg to \e[4mres/img/\e[0m"
+					cp -f data/img/$subtype.svg $pages/res/img/img$page.svg
+					
+					sed -e "s/%img%/img${page}/g" -e "s/%bg%/${color}/g" data/html/img_default.html >> $pages/page$page.$header
 				
 				;;
 				
 				page*)
-					sed -e "s/%subtitle%/${subtitle} - ${page}/g" -e "s/%lang%/$2/g" -e "s/%format%/${format}/g" -e "s/%subtype%/${subtype}/g" data/html/header.$header > $pages/page$page.$header
-					
-					sed -e "s|%img%|res/img/${img}|g" -e "s|%content%|${content}|g" -e "s/%bg%/${bg}/g" -e "s/%color%/${cfont}/g" data/html/page.html >> $pages/page$page.$header
-					
-					cat data/html/footer.html >> $pages/page$page.$header
-				
+					sed -e "s|%img%|res/img/${img}|g" -e "s|%content%|${content}|g" -e "s/%bg%/${bg}/g" -e "s/%color%/${cfont}/g" data/html/page_$subtype.html >> $pages/page$page.$header
+				;;
+				title*)
+					sed -e "s|%title%|${title}|g" -e "s|%subtitle%|${subtitle}|g" -e "s/%bg%/${color}/g" -e "s/%color%/${cfont}/g" data/html/title_$subtype.html >> $pages/page$page.$header
+				;;
+				chapter*)
+					sed -e "s|%title%|${content}|g" -e "s|%subtitle%|${comment}|g" -e "s/%bg%/${color}/g" -e "s/%color%/${cfont}/g" data/html/title_$subtype.html >> $pages/page$page.$header
+				;;
+				credit*)
+					sed -e "s|%lo_text%|${lo_text}|g" -e "s|%lo_illustration%|${lo_illustration}|g" -e "s|%lo_traduction%|${lo_traduction}|g" -e "s|%text%|${text}|g" -e "s/%illustration%/${illustration}/g" -e "s/%traduction%/${traduction}/g" data/html/credit_$subtype.html >> $pages/page$page.$header
+				;;
+				last*)
+					sed -e "s|%title%|${title}|g" -e "s|%subtitle%|${subtitle}|g" -e "s|%content%|${content}|g" -e "s/%bg%/${color}/g" -e "s/%color%/${cfont}/g" data/html/last_$subtype.html >> $pages/page$page.$header
+				;;
 			esac
+			
+			# NAVIGATION FOR HTML
+			if [[ "$output" == "html" ]]; then
+				if [ ! $page -eq 1 ]; then
+					nav=$(($page-1))
+					sed -e "s|%page%|page$nav.html|g" data/html/nav_left.html >> $pages/page$page.$header
+				fi
+				if [[ "$next" != "end" ]]; then
+					nav=$(($page+1))
+					sed -e "s|%page%|page$nav.html|g" data/html/nav_right.html >> $pages/page$page.$header
+				fi
+			fi
+		
+			
+			# FOOTER
+			cat data/html/footer.html >> $pages/page$page.$header
 			
 		fi
 	
@@ -243,6 +287,7 @@ for l in `cat $txt` ; do
 		page=$(($page+1))
 		img=""
 		content=""
+		comment=""
 		bg="white"
 		cfont="black"
 	;;

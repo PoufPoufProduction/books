@@ -1,5 +1,5 @@
-title:              
-subtitle:           Accusée, levez-vous !
+title:              Histoire courte
+subtitle:           "Accusée, levez-vous !"
 text:               Cyrille Larguillier
 illustration:       Johann C
 traduction_fr:

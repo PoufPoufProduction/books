@@ -7,6 +7,7 @@ type: img/stars
 
 [title]
 type: title
+color: white
 
 [credit]
 type: credit
@@ -70,5 +71,14 @@ fr_text: Le président prit la parole. « Aucune charge n’est retenue contre v
 type: page
 img: p012.svg
 fr_text: … la Petite Souris. »
+
+[recto2]
+type: img/stars
+
+[last]
+type: last
+color:white
+fr_text: Découvre le procès de la plus grande trafiquante d'organes de tous les temps.
+
 
 [end]
